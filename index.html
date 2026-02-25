@@ -1,1 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Encoder</title>
+  <link type="stylesheet" href="/properties.css">
+</head>
+
+<body>
+  <main>
+    <form action="/" id="qr_code_form">
+      <input type="text"
+             id="qr_code_content"
+             value=""
+             placeholder="Enter texts"
+             autocomplete="off"/>
+    </form><br/>
+
+    <div id="qr_code_image"></div>
+  </main>
+</body>
+
+<script src="/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+</html>
