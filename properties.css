@@ -1,1 +1,56 @@
+:root {
+  --txt_color: #fff;
+  --ui_background: hsl(0, 0%, 5%);
+  --ui_primary: hsl(0, 0%, 0%);
+  --ui_secondary: rgb(255,255,255);
+  --ui_highlight: ;
+}
 
+body {
+  background-color: #0c0c0c;
+  height: 100vh;
+  width: 100vw;
+  margin: 2em;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+}
+.style_text {
+  color: var(--txt_color)
+}
+
+.style_button {
+}
+
+.style_input {
+  background-color: #252525;
+  border: none;
+  border-radius: 1em;
+  outline: none;
+  padding: 0 0.7em 0 0.7em;
+}
+#qr_code {  
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#qr_content {
+  height: 2em; width: 16em;
+  font-size: 1.2em;
+}
+
+#qr_content:focus {
+  outline: 2.2px solid white
+}
+
+#qr_code_image {
+  height: auto;
+  width: auto;
+}

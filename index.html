@@ -1,28 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>QR Encoder</title>
-  <link type="stylesheet" href="https://kinnoven.github.io/qr-code/properties.css">
+  <link rel="stylesheet" href="/properties.css">
+  <script src="https://kinnoven.github.io/qr-code/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 
 <body>
   <main>
-    <form action="/" id="qr_code_form">
-      <input type="text"
-             id="qr_code_content"
-             value=""
-             placeholder="Enter texts"
-             autocomplete="off"/>
-    </form><br/>
 
-    <div id="qr_code_image"></div>
+    <div id="qr_code">
+
+      <form action="/" id="qr_form">
+        <input type="text"
+               id="qr_content"
+               class="style_input style_text"
+               value=""
+               placeholder="Enter content"
+               autocomplete="off"/>
+
+        <input type="submit"
+               class="style_button"
+               value="Code!"/>
+      </form><br/>
+
+      <div id="qr_code_image"></div>
+
+    </div>
+
   </main>
 </body>
 
-<script src="https://kinnoven.github.io/qr-code/script.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
 
+let QrContentInput = document.getElementById("qr_content"); // String to be encoded
+let QrForm = document.getElementById("qr_form"); // To add a event listener
+let QrCode; // Insert Generated QR code
+
+function generateQrCode(qrContent) {
+  return new QRCode("qr_code_image", {
+    text: qrContent,
+    height: 256,
+    width: 256,
+    colorLight: "#ffffff",
+    colorDark: "#000000",
+    correctLevel: QRCode.CorrectLevel.H,
+  });
+}
+
+QrForm.addEventListener("submit",
+  function (event) {
+    event.preventDefault();
+    let qrContent = QrContentInput.value; // Fetch written string
+    if (QrCode == null) {
+      QrCode = generateQrCode(qrContent);
+    }
+    else {
+      QrCode.makeCode(qrContent);
+    }
+  }
+);
+
+</script>
 </html>
