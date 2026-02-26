@@ -1,13 +1,13 @@
 :root {
   --txt_color: #fff;
   --ui_background: hsl(0, 0%, 5%);
-  --ui_primary: hsl(0, 0%, 0%);
-  --ui_secondary: rgb(255,255,255);
+  --ui_primary: hsl(0, 0%, 95%);
+  --ui_secondary: rgb(100, 125, 255);
   --ui_highlight: ;
 }
 
 body {
-  background-color: #0c0c0c;
+  background-color: var(--ui_background);
   height: 100vh;
   width: 100vw;
   margin: 2em;
@@ -24,6 +24,11 @@ main {
 }
 
 .style_button {
+  color: var(--txt_color);
+  background-color: var(--ui_secondary);
+  border: none;
+  border-radius: 100%;
+  aspect-ratio: 1;
 }
 
 .style_input {
@@ -33,16 +38,25 @@ main {
   outline: none;
   padding: 0 0.7em 0 0.7em;
 }
+
+
 #qr_code {  
   height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
-#qr_content {
-  height: 2em; width: 16em;
+#qr_form {
+  display: flex;
+  flex-direction: row;
+  height: 2.5em; width: 21em;
+}
+
+#qr_content { 
+  height: 100%; width: 100%;
   font-size: 1.2em;
 }
 
@@ -50,7 +64,17 @@ main {
   outline: 2.2px solid white
 }
 
+
+#qr_submit {
+  background-color: #464646;
+  font-size: 10px;
+  text-align: center;
+  height: 100%;
+  padding: 0;
+}
+
 #qr_code_image {
   height: auto;
   width: auto;
+  padding-top: 2em;
 }

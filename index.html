@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>QR Encoder</title>
   <link rel="stylesheet" type="text/css" href="./properties.css">
+  <link rel="icon" type="image/x-icon" href="">
   <script src="./script.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
@@ -13,18 +14,21 @@
   <main>
 
     <div id="qr_code">
-
+              
       <form action="/" id="qr_form">
+
         <input type="text"
                id="qr_content"
                class="style_input style_text"
                value=""
-               placeholder="Enter content"
+               placeholder="Enter string (example: https://www.youtube.com/watch?v=123ABC)"
                autocomplete="off"/>
 
         <input type="submit"
+               id="qr_submit"
                class="style_button"
-               value="Code!"/>
+               value="Encode!"/>
+
       </form><br/>
 
       <div id="qr_code_image"></div>
